@@ -35,4 +35,9 @@ describe('ban', function () {
     const name = 'something-pem.txt';
     la(!isBanned(name), 'should be allowed', name);
   });
+
+  it('catches tblk extension', function () {
+    la(isBanned('foo.tblk'));
+    la(!isBanned('foo.atblk'));
+  });
 });
