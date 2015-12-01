@@ -1,0 +1,48 @@
+{
+  "name": "ban-sensitive-files",
+  "version": "1.0.0",
+  "description": "Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git-issues && commit-wizard",
+    "issues": "git-issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/ban-sensitive-files.git"
+  },
+  "keywords": [
+    "npm",
+    "git",
+    "github",
+    "security",
+    "sensitive",
+    "confidential",
+    "commit",
+    "prevent",
+    "secure",
+    "private",
+    "key"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/ban-sensitive-files/issues"
+  },
+  "homepage": "https://github.com/bahmutov/ban-sensitive-files#readme",
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": [],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "devDependencies": {
+    "git-issues": "1.2.0",
+    "mocha": "2.3.4",
+    "pre-git": "1.4.0"
+  }
+}
