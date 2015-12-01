@@ -1,38 +1,33 @@
-var rules = require('./git-deny-patterns.json');
-console.log('loaded', Object.keys(rules).length, 'rules');
+const la = require('lazy-ass');
+const check = require('check-more-types');
+const rules = require('./git-deny-patterns.json');
+la(check.array(rules), 'missing list of rules', rules);
+const ruleToTester = require('./src/rule-to-tester');
+la(check.fn(ruleToTester), 'could not get rule to tester');
 
-var sampleRule = {
-  "part": "filename",
-  "type": "regex",
-  "pattern": "\\A.*_rsa\\z",
-  "caption": "Private SSH key",
-  "description": null
-};
+console.log('loaded', rules.length, 'rules');
 
-var sampleRule2 = {
-  "part": "filename",
-  "type": "regex",
-  "pattern": "\\A\\.?(bash_|zsh_|z)?history\\z",
-  "caption": "Shell command history file",
-  "description": null
-};
-
-function pythonToJavaScriptRegularExpression(pattern) {
-  return pattern
-    .replace('\\A', '^')
-    .replace('\\z', '$');
+// TODO lift?
+function formTesters(rules) {
+  return rules.map(function (rule) {
+    return ruleToTester(rule);
+  });
 }
 
-/*
-var fixedPattern = pythonToJavaScriptRegularExpression(sampleRule.pattern);
-console.log('sample pattern', fixedPattern);
-var sampleRegex = new RegExp(fixedPattern);
-console.assert(sampleRegex.test('id_rsa'));
-*/
+var testers = formTesters(rules);
 
-var fixedPattern = pythonToJavaScriptRegularExpression(sampleRule2.pattern);
-console.log('sample pattern', fixedPattern);
-var sampleRegex = new RegExp(fixedPattern);
-console.assert(sampleRegex.test('.bash_history'));
-console.assert(sampleRegex.test('.zsh_history'));
-console.assert(sampleRegex.test('.zhistory'));
+var reToRegExp = require('./src/re-to-regexp');
+
+function isInvalidFilename(filename) {
+  return testers.some(function (tester, k) {
+    if (tester(filename)) {
+      const brokenRule = rules[k];
+      console.error('invalid filename', filename);
+      console.error(brokenRule.caption);
+      if (brokenRule.description) {
+        console.error(' -', brokenRule.description);
+      }
+      return true;
+    }
+  });
+}

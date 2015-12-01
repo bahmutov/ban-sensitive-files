@@ -4,7 +4,7 @@
   "main": "index.js",
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/*-spec.js",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -46,5 +46,9 @@
     "mocha": "2.3.4",
     "pre-git": "1.4.0",
     "semantic-release": "^4.3.5"
+  },
+  "dependencies": {
+    "check-more-types": "2.2.0",
+    "lazy-ass": "1.1.0"
   }
 }
