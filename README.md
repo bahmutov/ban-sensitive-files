@@ -13,6 +13,14 @@ Note: the source file with rules was taken from file
 [git-deny-patterns.json](https://github.com/jandre/safe-commit-hook/blob/master/git-deny-patterns.json)
 from repo [jandre/safe-commit-hook](https://github.com/jandre/safe-commit-hook) on Dec 2015.
 
+## Motivation
+
+Can you accidentally add `id_rsa` file to your Github? Sure!
+But remember, it will be [very hard](https://help.github.com/articles/remove-sensitive-data/) to remove
+traces of them later. Wouldn't be easier to never commit files that should not be committed in the first place?
+This project is a easy to use CLI or git pre-commit hook filter that will scrape modified or added
+filenames to make sure they do not match widely common patterns (`.pem`, etc.)
+
 ## Install
 
 Add to your project `npm install --save-dev ban-sensitive-files`
@@ -31,14 +39,14 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 ```
 
 * When using from other Git hook projects, for example from [pre-git](https://github.com/bahmutov/pre-git),
-  add to the `pre-commit` command list
+  first, add "ban" NPM script command, then add to the `pre-commit` command list
 
 ```json
 "config": {
   "pre-git": {
     "pre-commit": [
       "npm test",
-      "ban"
+      "npm run ban"
     ]
   }
 }
