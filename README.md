@@ -13,6 +13,33 @@ Note: the source file with rules was taken from file
 [git-deny-patterns.json](https://github.com/jandre/safe-commit-hook/blob/master/git-deny-patterns.json)
 from repo [jandre/safe-commit-hook](https://github.com/jandre/safe-commit-hook) on Dec 2015.
 
+## Install
+
+Add to your project `npm install --save-dev ban-sensitive-files`
+
+## Use
+
+* From the command line `node node_modules/.bin/ban` when you have any staged files to check their
+  filenames.
+
+* From NPM script
+
+    "scripts": {
+      "ban": "ban"
+    }
+
+* When using from other Git hook projects, for example from [pre-git](https://github.com/bahmutov/pre-git),
+  add to the `pre-commit` command list
+
+    "config": {
+      "pre-git": {
+        "pre-commit": [
+          "npm test",
+          "ban"
+        ]
+      }
+    }
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
