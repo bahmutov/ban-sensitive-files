@@ -18,10 +18,8 @@ const testers = formTesters(rules);
 
 const reToRegExp = require('./re-to-regexp');
 
-function isBannedFilename(filename, logger) {
-  logger = logger || console.error.bind(console);
-
-  return testers.some(function (tester, k) {
+function singleTester(filenames, logger, tester, k) {
+  return filenames.some(function (filename) {
     if (tester(filename)) {
       const brokenRule = rules[k];
 
@@ -37,6 +35,16 @@ function isBannedFilename(filename, logger) {
       return true;
     }
   });
+}
+
+function isBannedFilename(filename, logger) {
+  la(check.maybe.unemptyString(filename) ||
+    check.array(filename), 'expected single or list of filenames', filename);
+  logger = logger || console.error.bind(console);
+
+  const filenames = check.array(filename) ? filename : [filename];
+
+  return testers.some(singleTester.bind(null, filenames, logger));
 }
 
 module.exports = isBannedFilename;

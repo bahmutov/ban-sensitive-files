@@ -47,7 +47,27 @@ describe('ban', function () {
       called += 1;
     }
     la(isBanned('foo.tblk', logger));
-    la(called == 1, 'logger has been called once');
+    la(called === 1, 'logger has been called once');
+  });
+
+  it('supports multiple filename', function () {
+    var called = 0;
+    function logger() {
+      called += 1;
+    }
+    const filenames = ['foo.tblk', 'id_rsa'];
+    la(isBanned(filenames, logger));
+    la(called === 1, 'logger has been called once');
+  });
+
+  it('passes multiple filename', function () {
+    var called = 0;
+    function logger() {
+      called += 1;
+    }
+    const filenames = ['foo.js', 'bar/baz.js'];
+    la(!isBanned(filenames, logger));
+    la(called === 0, 'no problems');
   });
 
 });
