@@ -9,6 +9,10 @@
 [![devdependencies][ban-sensitive-files-devdependencies-image] ][ban-sensitive-files-devdependencies-url]
 [![semantic-release][semantic-image] ][semantic-url]
 
+Note: the source file with rules was taken from file
+[git-deny-patterns.json](https://github.com/jandre/safe-commit-hook/blob/master/git-deny-patterns.json)
+from repo [jandre/safe-commit-hook](https://github.com/jandre/safe-commit-hook) on Dec 2015.
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015
