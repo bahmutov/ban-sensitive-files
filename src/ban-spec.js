@@ -25,4 +25,14 @@ describe('ban', function () {
   it('allows other long paths', function () {
     la(!isBanned('foo/bar/Gruntfile.js'));
   });
+
+  it('catches pem extension', function () {
+    const name = 'something.pem';
+    la(isBanned(name), 'pem extension should be banned', name);
+  });
+
+  it('allows pem substring', function () {
+    const name = 'something-pem.txt';
+    la(!isBanned(name), 'should be allowed', name);
+  });
 });
