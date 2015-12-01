@@ -40,4 +40,14 @@ describe('ban', function () {
     la(isBanned('foo.tblk'));
     la(!isBanned('foo.atblk'));
   });
+
+  it('calls provided logger', function () {
+    var called = 0;
+    function logger() {
+      called += 1;
+    }
+    la(isBanned('foo.tblk', logger));
+    la(called == 1, 'logger has been called once');
+  });
+
 });

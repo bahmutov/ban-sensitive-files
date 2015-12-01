@@ -18,15 +18,22 @@ const testers = formTesters(rules);
 
 const reToRegExp = require('./re-to-regexp');
 
-function isBannedFilename(filename) {
+function isBannedFilename(filename, logger) {
+  logger = logger || console.error.bind(console);
+
   return testers.some(function (tester, k) {
     if (tester(filename)) {
       const brokenRule = rules[k];
-      console.error('invalid filename', filename);
-      console.error(brokenRule.caption);
-      if (brokenRule.description) {
-        console.error(' -', brokenRule.description);
+
+      var message = 'invalid filename ' + filename;
+      if (check.unemptyString(brokenRule.caption)) {
+        message += '\n - ' + brokenRule.caption;
       }
+      if (brokenRule.description) {
+        message += '\n - ' + brokenRule.description;
+      }
+      logger(message);
+
       return true;
     }
   });
