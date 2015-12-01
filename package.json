@@ -1,16 +1,17 @@
 {
   "name": "ban-sensitive-files",
-  "version": "1.0.0",
   "description": "Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git",
   "main": "index.js",
+  "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "commit": "git-issues && commit-wizard",
-    "issues": "git-issues"
+    "issues": "git-issues",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/ban-sensitive-files.git"
+    "url": "https://github.com/bahmutov/ban-sensitive-files.git"
   },
   "keywords": [
     "npm",
@@ -43,6 +44,7 @@
   "devDependencies": {
     "git-issues": "1.2.0",
     "mocha": "2.3.4",
-    "pre-git": "1.4.0"
+    "pre-git": "1.4.0",
+    "semantic-release": "^4.3.5"
   }
 }
