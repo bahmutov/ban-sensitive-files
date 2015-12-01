@@ -12,20 +12,41 @@ const path = require('path');
 
 function I(x) { return x; }
 
+function extension(filename) {
+  // remove leading dot
+  return path.extname(filename).substr(1);
+}
+
 const fileParts = {
   filename: path.basename,
-  extension: path.extname,
+  extension: extension,
   path: I
+};
+
+const regRules = {
+  regex: function (pattern) {
+    const reg = toR(pattern);
+    return function (str) {
+      return reg.test(str);
+    };
+  },
+  match: function (pattern) {
+    return function (str) {
+      return str === pattern;
+    };
+  }
 };
 
 function ruleToTester(rule) {
   la(isRuleSchema(rule), 'invalid rule', rule);
-  const reg = toR(rule.pattern);
   const getFilePart = fileParts[rule.part] || fileParts.filename;
+
+  const getRegex = regRules[rule.type] || regRules.regex;
+  const getRegexFull = getRegex(rule.pattern);
 
   return function testRule(str) {
     const part = getFilePart(str);
-    return reg.test(part);
+    return getRegexFull(part);
   };
 }
 

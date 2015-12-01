@@ -22,6 +22,16 @@ describe('rule to tester transform', function () {
       la(tester('something.pem'));
     });
 
+    it('validates extension in full paths', function () {
+      const tester = toTester(rule);
+      la(tester('foo/bar/something.pem'));
+    });
+
+    it('allows non exact strings', function () {
+      const tester = toTester(rule);
+      la(!tester('something.pema'));
+    });
+
     it('allows substring', function () {
       const tester = toTester(rule);
       la(!tester('something-pem.js'));
