@@ -24,21 +24,25 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 
 * From NPM script
 
-    "scripts": {
-      "ban": "ban"
-    }
+```json
+"scripts": {
+  "ban": "ban"
+}
+```
 
 * When using from other Git hook projects, for example from [pre-git](https://github.com/bahmutov/pre-git),
   add to the `pre-commit` command list
 
-    "config": {
-      "pre-git": {
-        "pre-commit": [
-          "npm test",
-          "ban"
-        ]
-      }
-    }
+```json
+"config": {
+  "pre-git": {
+    "pre-commit": [
+      "npm test",
+      "ban"
+    ]
+  }
+}
+```
 
 ### Small print
 
