@@ -44,11 +44,14 @@
     "pre-git": {
       "commit-msg": "validate-commit-msg",
       "pre-commit": [
-        "npm test",
         "node bin/ban.js"
       ],
-      "pre-push": [],
-      "post-commit": [],
+      "pre-push": [
+        "npm test"
+      ],
+      "post-commit": [
+        "npm test"
+      ],
       "post-merge": []
     }
   },

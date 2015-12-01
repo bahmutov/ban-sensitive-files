@@ -41,6 +41,7 @@ ggit.changedFiles()
   .then(printFilenames)
   .then(isBanned)
   .then(function (foundBannedFilenames) {
+    log('found banned filenames?', foundBannedFilenames);
     if (foundBannedFilenames) {
       process.exit(-1);
     }
