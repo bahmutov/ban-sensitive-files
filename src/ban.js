@@ -5,7 +5,9 @@ la(check.array(rules), 'missing list of rules', rules);
 const ruleToTester = require('./rule-to-tester');
 la(check.fn(ruleToTester), 'could not get rule to tester');
 
-console.log('loaded', rules.length, 'rules');
+const log = require('debug')('ban');
+
+log('loaded', rules.length, 'rules');
 
 // TODO lift?
 function formTesters(rules) {

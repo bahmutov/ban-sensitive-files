@@ -2,6 +2,13 @@
   "name": "ban-sensitive-files",
   "description": "Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git",
   "main": "src/ban.js",
+  "bin": {
+    "ban": "bin/ban.js",
+    "ban-sensitive-files": "bin/ban.js",
+    "sensitive-files": "bin/ban.js",
+    "ban-sensitive": "bin/ban.js",
+    "no-sensitive": "bin/ban.js"
+  },
   "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "mocha src/*-spec.js",
@@ -51,6 +58,9 @@
   },
   "dependencies": {
     "check-more-types": "2.2.0",
-    "lazy-ass": "1.1.0"
+    "debug": "2.2.0",
+    "ggit": "1.2.1",
+    "lazy-ass": "1.1.0",
+    "update-notifier": "0.5.0"
   }
 }
