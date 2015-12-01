@@ -1,0 +1,61 @@
+# ban-sensitive-files
+
+> Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git
+
+[![NPM][ban-sensitive-files-icon] ][ban-sensitive-files-url]
+
+[![Build status][ban-sensitive-files-ci-image] ][ban-sensitive-files-ci-url]
+[![dependencies][ban-sensitive-files-dependencies-image] ][ban-sensitive-files-dependencies-url]
+[![devdependencies][ban-sensitive-files-devdependencies-image] ][ban-sensitive-files-devdependencies-url]
+[![semantic-release][semantic-image] ][semantic-url]
+
+### Small print
+
+Author: Gleb Bahmutov &copy; 2015
+
+* [@bahmutov](https://twitter.com/bahmutov)
+* [glebbahmutov.com](http://glebbahmutov.com)
+* [blog](http://glebbahmutov.com/blog/)
+
+License: MIT - do anything with the code, but don't blame me if it does not work.
+
+Spread the word: tweet, star on github, etc.
+
+Support: if you find any problems with this module, email / tweet /
+[open issue](https://github.com/bahmutov/ban-sensitive-files/issues) on Github
+
+## MIT License
+
+Copyright (c) 2015 Gleb Bahmutov
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+[ban-sensitive-files-icon]: https://nodei.co/npm/ban-sensitive-files.png?downloads=true
+[ban-sensitive-files-url]: https://npmjs.org/package/ban-sensitive-files
+[ban-sensitive-files-ci-image]: https://travis-ci.org/bahmutov/ban-sensitive-files.png?branch=master
+[ban-sensitive-files-ci-url]: https://travis-ci.org/bahmutov/ban-sensitive-files
+[ban-sensitive-files-dependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files.png
+[ban-sensitive-files-dependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files
+[ban-sensitive-files-devdependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files/dev-status.png
+[ban-sensitive-files-devdependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files#info=devDependencies
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
