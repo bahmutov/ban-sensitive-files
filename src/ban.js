@@ -1,8 +1,8 @@
 const la = require('lazy-ass');
 const check = require('check-more-types');
-const rules = require('./git-deny-patterns.json');
+const rules = require('../git-deny-patterns.json');
 la(check.array(rules), 'missing list of rules', rules);
-const ruleToTester = require('./src/rule-to-tester');
+const ruleToTester = require('./rule-to-tester');
 la(check.fn(ruleToTester), 'could not get rule to tester');
 
 console.log('loaded', rules.length, 'rules');
@@ -14,11 +14,11 @@ function formTesters(rules) {
   });
 }
 
-var testers = formTesters(rules);
+const testers = formTesters(rules);
 
-var reToRegExp = require('./src/re-to-regexp');
+const reToRegExp = require('./re-to-regexp');
 
-function isInvalidFilename(filename) {
+function isBannedFilename(filename) {
   return testers.some(function (tester, k) {
     if (tester(filename)) {
       const brokenRule = rules[k];
@@ -31,3 +31,5 @@ function isInvalidFilename(filename) {
     }
   });
 }
+
+module.exports = isBannedFilename;

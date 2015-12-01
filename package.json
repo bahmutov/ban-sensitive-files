@@ -1,7 +1,7 @@
 {
   "name": "ban-sensitive-files",
   "description": "Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git",
-  "main": "index.js",
+  "main": "src/ban.js",
   "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "mocha src/*-spec.js",
@@ -35,7 +35,9 @@
   "config": {
     "pre-git": {
       "commit-msg": "validate-commit-msg",
-      "pre-commit": [],
+      "pre-commit": [
+        "npm test"
+      ],
       "pre-push": [],
       "post-commit": [],
       "post-merge": []
