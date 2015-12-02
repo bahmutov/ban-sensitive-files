@@ -59,12 +59,12 @@
     "git-issues": "1.2.0",
     "mocha": "2.3.4",
     "pre-git": "1.4.0",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "6.0.3"
   },
   "dependencies": {
     "check-more-types": "2.2.0",
     "debug": "2.2.0",
-    "ggit": "1.2.1",
+    "ggit": "1.4.0",
     "lazy-ass": "1.1.0",
     "update-notifier": "0.5.0"
   }
