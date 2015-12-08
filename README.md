@@ -57,6 +57,19 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 }
 ```
 
+* You can use the checker from another module
+
+```js
+var isBanned = require('ban-sensitive-files');
+isBanned('path/file/name');
+// checks single file, returns true or false
+// prints any errors to console.error
+isBanned(['name1', 'name2', 'name3']);
+// checks list of files
+isBanned('file/name', logger);
+// use provided logger function instead of console.error
+```
+
 ## Advanced
 
 To figure out what the script is doing, enable debug logging
