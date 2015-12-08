@@ -17,9 +17,13 @@ from repo [jandre/safe-commit-hook](https://github.com/jandre/safe-commit-hook) 
 
 Can you accidentally add `id_rsa` file to your Github? Sure!
 But remember, it will be [very hard](https://help.github.com/articles/remove-sensitive-data/) to remove
-traces of them later. Wouldn't be easier to never commit files that should not be committed in the first place?
+traces of them later. [Most popular NPM packages have leaked sensitive information by mistake][1].
+
+Wouldn't be easier to never commit files that should not be committed in the first place?
 This project is a easy to use CLI or git pre-commit hook filter that will scrape modified or added
 filenames to make sure they do not match widely common patterns (`.pem`, etc.)
+
+[1]: https://github.com/ChALkeR/notes/blob/master/Do-not-underestimate-credentials-leaks.md
 
 ## Install
 
