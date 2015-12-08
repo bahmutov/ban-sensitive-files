@@ -7,7 +7,8 @@
     "ban-sensitive-files": "bin/ban.js",
     "sensitive-files": "bin/ban.js",
     "ban-sensitive": "bin/ban.js",
-    "no-sensitive": "bin/ban.js"
+    "no-sensitive": "bin/ban.js",
+    "no-way": "bin/ban.js"
   },
   "version": "0.0.0-semantic-release",
   "scripts": {
@@ -16,7 +17,8 @@
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
+    "lint": "standard bin/*.js src/*.js"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "pre-git": {
       "commit-msg": "validate-commit-msg",
       "pre-commit": [
+        "npm run lint",
         "node bin/ban.js"
       ],
       "pre-push": [
@@ -61,7 +64,8 @@
     "git-issues": "1.2.0",
     "mocha": "2.3.4",
     "pre-git": "2.0.2",
-    "semantic-release": "6.0.3"
+    "semantic-release": "6.0.3",
+    "standard": "5.4.1"
   },
   "dependencies": {
     "check-more-types": "2.2.0",

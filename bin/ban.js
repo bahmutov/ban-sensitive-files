@@ -1,39 +1,39 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --harmony
 
 require('update-notifier')({
   pkg: require('../package.json')
-}).notify();
+}).notify()
 
-const log = require('debug')('ban');
+const log = require('debug')('ban')
 
-function getProperty(prop) {
+function getProperty (prop) {
   return function (obj) {
-    return obj[prop];
-  };
+    return obj[prop]
+  }
 }
 
-const isBanned = require('..');
-const ggit = require('ggit');
-const getName = getProperty('name');
+const isBanned = require('..')
+const ggit = require('ggit')
+const getName = getProperty('name')
 
-function collectFilenames(info) {
-  var filenames = [];
+function collectFilenames (info) {
+  var filenames = []
   if (info.A) {
-    filenames = filenames.concat(info.A.map(getName));
+    filenames = filenames.concat(info.A.map(getName))
   }
   if (info.M) {
-    filenames = filenames.concat(info.M.map(getName));
+    filenames = filenames.concat(info.M.map(getName))
   }
   if (info.C) {
-    filenames = filenames.concat(info.C.map(getName));
+    filenames = filenames.concat(info.C.map(getName))
   }
-  return filenames;
+  return filenames
 }
 
-function printFilenames(names) {
-  log('%d changed filenames', names.length);
-  log(names);
-  return names;
+function printFilenames (names) {
+  log('%d changed filenames', names.length)
+  log(names)
+  return names
 }
 
 ggit.changedFiles()
@@ -41,13 +41,13 @@ ggit.changedFiles()
   .then(printFilenames)
   .then(isBanned)
   .then(function (foundBannedFilenames) {
-    log('found banned filenames?', foundBannedFilenames);
+    log('found banned filenames?', foundBannedFilenames)
     if (foundBannedFilenames) {
-      process.exit(-1);
+      process.exit(-1)
     }
   })
   .catch(function (err) {
-    console.error(err.message);
-    process.exit(-1);
+    console.error(err.message)
+    process.exit(-1)
   })
-  .done();
+  .done()

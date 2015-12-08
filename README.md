@@ -8,6 +8,7 @@
 [![dependencies][ban-sensitive-files-dependencies-image] ][ban-sensitive-files-dependencies-url]
 [![devdependencies][ban-sensitive-files-devdependencies-image] ][ban-sensitive-files-devdependencies-url]
 [![semantic-release][semantic-image] ][semantic-url]
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Note: the source file with rules was taken from file
 [git-deny-patterns.json](https://github.com/jandre/safe-commit-hook/blob/master/git-deny-patterns.json)
@@ -55,6 +56,12 @@ Add to your project `npm install --save-dev ban-sensitive-files`
   }
 }
 ```
+
+## Advanced
+
+To figure out what the script is doing, enable debug logging
+
+    DEBUG=ban npm run ban
 
 ### Small print
 
