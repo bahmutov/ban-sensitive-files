@@ -6,10 +6,29 @@ require('update-notifier')({
 
 const log = require('debug')('ban')
 
+const fs = require('fs')
+
+function isFile (filename) {
+  if (fs.existsSync(filename)) {
+    return fs.lstatSync(filename).isFile()
+  }
+  // assume non-existent or deleted files could be files
+  return true
+}
+
 function getProperty (prop) {
   return function (obj) {
     return obj[prop]
   }
+}
+
+function shouldCheckAllFiles () {
+  return process.argv.some(str => {
+    return str === 'all' ||
+      str === 'every' ||
+      str === '-f' ||
+      str === '--force'
+  })
 }
 
 const isBanned = require('..')
@@ -31,13 +50,20 @@ function collectFilenames (info) {
 }
 
 function printFilenames (names) {
-  log('%d changed filenames', names.length)
+  log('checking %d filenames', names.length)
   log(names)
   return names
 }
 
-ggit.changedFiles()
-  .then(collectFilenames)
+function findAllRepoFiles () {
+  return ggit.trackedFiles(process.cwd(), '**')
+    .then(names => names.filter(isFile))
+}
+
+const start = shouldCheckAllFiles()
+  ? findAllRepoFiles() : ggit.changedFiles().then(collectFilenames)
+
+start
   .then(printFilenames)
   .then(isBanned)
   .then(function (foundBannedFilenames) {
