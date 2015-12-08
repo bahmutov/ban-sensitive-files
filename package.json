@@ -39,6 +39,11 @@
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
+  "files": [
+    "bin",
+    "src/*.js",
+    "!src/*-spec.js"
+  ],
   "bugs": {
     "url": "https://github.com/bahmutov/ban-sensitive-files/issues"
   },
