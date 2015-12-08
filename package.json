@@ -60,7 +60,7 @@
   "devDependencies": {
     "git-issues": "1.2.0",
     "mocha": "2.3.4",
-    "pre-git": "2.0.1",
+    "pre-git": "2.0.2",
     "semantic-release": "6.0.3"
   },
   "dependencies": {
