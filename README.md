@@ -46,7 +46,7 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 
 Then run `npm run ban` to check modified, added or deleted filenames.
 You can check ALL repo filenames again by adding command line flag `-f` to form the full command
-`npm run ban -f`.
+`npm run ban -- -f`.
 
 * When using from other Git hook projects, for example from [pre-git](https://github.com/bahmutov/pre-git),
   first, add "ban" NPM script command, then add to the `pre-commit` command list
@@ -62,9 +62,7 @@ You can check ALL repo filenames again by adding command line flag `-f` to form 
 }
 ```
 
-* When using from a CI you probably want to check all filenames
-
-    npm run ban -f
+* When using from a CI you probably want to check all filenames `npm run ban -- -f`
 
 * You can use the checker from another module
 

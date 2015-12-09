@@ -13,7 +13,7 @@
   "version": "0.0.0-semantic-release",
   "scripts": {
     "test": "mocha src/*-spec.js",
-    "ban": "node bin/ban.js",
+    "ban": "node --harmony bin/ban.js",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
