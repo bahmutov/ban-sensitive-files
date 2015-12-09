@@ -43,6 +43,7 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "files": [
+    "git-deny-patterns.json",
     "bin",
     "src/*.js",
     "!src/*-spec.js"
