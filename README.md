@@ -62,7 +62,14 @@ You can check ALL repo filenames again by adding command line flag `-f` to form 
 }
 ```
 
-* When using from a CI you probably want to check all filenames `npm run ban -- -f`
+* When using from a CI you probably want to check all filenames `npm run ban -- -f`.
+  If the CI has troubles running `node --harmony` scripts, set the "ban" script to be exact
+
+```json
+"scripts": {
+  "ban": "node --harmony node_modules/.bin/ban"
+}
+```
 
 * You can use the checker from another module
 

@@ -12,7 +12,7 @@
   },
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "rocha src/*-spec.js",
+    "test": "node --harmony node_modules/.bin/rocha src/*-spec.js",
     "ban": "node --harmony bin/ban.js",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
