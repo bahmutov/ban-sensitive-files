@@ -19,7 +19,7 @@ describe('check npmrc file', () => {
     return check(promise(text))
       .then(() => la(false, 'did not catch _auth'),
         err => {
-          la(is.error(err), 'expected an Error instance')
+          la(is.instance(err, Error), 'expected an Error instance')
           return Promise.resolve()
         })
   })
