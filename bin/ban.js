@@ -5,22 +5,9 @@ require('update-notifier')({
 }).notify()
 
 const log = require('debug')('ban')
-
-const fs = require('fs')
-
-function isFile (filename) {
-  if (fs.existsSync(filename)) {
-    return fs.lstatSync(filename).isFile()
-  }
-  // assume non-existent or deleted files could be files
-  return true
-}
-
-function getProperty (prop) {
-  return function (obj) {
-    return obj[prop]
-  }
-}
+const la = require('lazy-ass')
+const is = require('check-more-types')
+const collectFiles = require('../src/collect-files')
 
 function shouldCheckAllFiles () {
   return process.argv.some(str => {
@@ -32,45 +19,20 @@ function shouldCheckAllFiles () {
 }
 
 const isBanned = require('..')
-const ggit = require('ggit')
-const getName = getProperty('name')
-
-function collectFilenames (info) {
-  var filenames = []
-  if (info.A) {
-    filenames = filenames.concat(info.A.map(getName))
-  }
-  if (info.M) {
-    filenames = filenames.concat(info.M.map(getName))
-  }
-  if (info.C) {
-    filenames = filenames.concat(info.C.map(getName))
-  }
-  return filenames
+const options = {
+  all: shouldCheckAllFiles()
 }
 
-function printFilenames (names) {
-  log('checking %d filenames', names.length)
-  log(names)
-  return names
-}
-
-function findAllRepoFiles () {
-  return ggit.trackedFiles(process.cwd(), '**')
-    .then(names => names.filter(isFile))
-}
-
-const start = shouldCheckAllFiles()
-  ? findAllRepoFiles() : ggit.changedFiles().then(collectFilenames)
-
-start
-  .then(printFilenames)
+collectFiles(options)
   .then(isBanned)
   .then(function (foundBannedFilenames) {
-    log('found banned filenames?', foundBannedFilenames)
     if (foundBannedFilenames) {
+      log('found banned filenames', foundBannedFilenames)
+      la(is.array(foundBannedFilenames), 'expected list', foundBannedFilenames)
+      la(is.not.empty(foundBannedFilenames), 'empty list', foundBannedFilenames)
       process.exit(-1)
     }
+    log('found no banned filenames')
   })
   .catch(function (err) {
     console.error(err.message)
