@@ -36,7 +36,7 @@ function printFilenames (names) {
 }
 
 function findAllRepoFiles () {
-  return ggit.trackedFiles(process.cwd(), '**')
+  return ggit.trackedFiles(process.cwd(), '**', { dot: true })
     .then(names => names.filter(isFile))
 }
 
@@ -52,6 +52,7 @@ module.exports = collectFiles
 
 if (!module.parent) {
   collectFiles({ all: true })
-    .then(list => la(is.array(list)))
+    .then(R.tap(list => la(is.array(list))))
+    .then(console.log.bind(console))
     .catch(console.error.bind(console))
 }
