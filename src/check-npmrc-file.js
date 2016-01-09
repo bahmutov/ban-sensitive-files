@@ -1,13 +1,14 @@
 const la = require('lazy-ass')
 const is = require('check-more-types')
+const filename = '.npmrc'
 
 function checkLine (line) {
   la(is.string(line), 'expected line string', line)
   if (line.indexOf('_auth=') !== -1) {
-    return 'Found _auth token'
+    return 'Found _auth token in ' + filename
   }
   if (line.indexOf('_authToken=') !== -1) {
-    return 'Found _authToken text'
+    return 'Found _authToken text in ' + filename
   }
 }
 
