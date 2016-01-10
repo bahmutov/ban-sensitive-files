@@ -1,6 +1,7 @@
 # ban-sensitive-files
 
 > Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git
+> Checks some files for sensitive contents (for example authToken inside .npmrc file)
 
 [![NPM][ban-sensitive-files-icon] ][ban-sensitive-files-url]
 
@@ -33,8 +34,8 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 
 ## Use
 
-* From the command line `node --harmony node_modules/.bin/ban` when you have any staged files to check their
-  filenames.
+* From the command line `node --harmony node_modules/.bin/ban` when you have any staged files 
+  to check their filenames.
 
 * From NPM script
 
@@ -62,8 +63,19 @@ You can check ALL repo filenames again by adding command line flag `-f` to form 
 }
 ```
 
-* When using from a CI you probably want to check all filenames `npm run ban -- -f`.
-  If the CI has troubles running `node --harmony` scripts, set the "ban" script to be exact
+* When using from a CI you probably want to check all files in the repo, not just
+the changed ones. Pass `-f` or `--all` option. Example Travis file
+
+```yaml
+script:
+  - npm run ban -- --all
+  - npm test
+```
+
+## Note about --harmony flag
+
+If the CI has troubles running `node --harmony` scripts, set the "ban" script to be the full
+node command
 
 ```json
 "scripts": {
@@ -71,7 +83,9 @@ You can check ALL repo filenames again by adding command line flag `-f` to form 
 }
 ```
 
-* You can use the checker from another module
+## Use as a module
+
+You can use the checker from another module
 
 ```js
 var isBanned = require('ban-sensitive-files');

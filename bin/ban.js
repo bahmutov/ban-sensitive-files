@@ -12,8 +12,8 @@ const checkSensitiveFiles = require('../src/check-sensitive-files')
 
 function shouldCheckAllFiles () {
   return process.argv.some(str => {
-    return str === 'all' ||
-      str === 'every' ||
+    return str === '--all' ||
+      str === '--every' ||
       str === '-f' ||
       str === '--force'
   })
