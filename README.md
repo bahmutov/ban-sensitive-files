@@ -30,6 +30,11 @@ filenames to make sure they do not match widely common patterns (`.pem`, etc.)
 
 [1]: https://github.com/ChALkeR/notes/blob/master/Do-not-underestimate-credentials-leaks.md
 
+For example, here is `ban` in action - stopping me from adding NPM registry `_authToken` to
+`.npmrc` file
+
+[![asciicast](https://asciinema.org/a/33377.png)](https://asciinema.org/a/33377)
+
 ## Install
 
 Add to your project `npm install --save-dev ban-sensitive-files`
