@@ -1,6 +1,7 @@
 # ban-sensitive-files
 
-> Checks filenames to be committed against a library of filename rules to prevent sensitive files in Git
+> Checks filenames to be committed against a library of filename rules 
+> to prevent storing sensitive files in Git.
 > Checks some files for sensitive contents (for example authToken inside .npmrc file)
 
 [![NPM][ban-sensitive-files-icon] ][ban-sensitive-files-url]
@@ -8,6 +9,7 @@
 [![Build status][ban-sensitive-files-ci-image] ][ban-sensitive-files-ci-url]
 [![dependencies][ban-sensitive-files-dependencies-image] ][ban-sensitive-files-dependencies-url]
 [![devdependencies][ban-sensitive-files-devdependencies-image] ][ban-sensitive-files-devdependencies-url]
+
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![alternate](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
