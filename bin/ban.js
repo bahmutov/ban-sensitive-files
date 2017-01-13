@@ -1,4 +1,4 @@
-#!/usr/bin/env node --harmony
+#!/usr/bin/env node
 
 require('update-notifier')({
   pkg: require('../package.json')
