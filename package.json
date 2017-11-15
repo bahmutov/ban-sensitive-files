@@ -12,8 +12,8 @@
   },
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "test": "node --harmony node_modules/.bin/rocha src/*-spec.js",
-    "ban": "node --harmony bin/ban.js",
+    "test": "node node_modules/.bin/rocha src/*-spec.js",
+    "ban": "node bin/ban.js",
     "commit": "git-issues && commit-wizard",
     "issues": "git-issues",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
@@ -57,7 +57,7 @@
       "commit-msg": "simple",
       "pre-commit": [
         "npm run lint",
-        "node --harmony bin/ban.js"
+        "node bin/ban.js"
       ],
       "pre-push": [
         "npm test",

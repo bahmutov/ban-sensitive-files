@@ -41,7 +41,7 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 
 ## Use
 
-* From the command line `node --harmony node_modules/.bin/ban` when you have any staged files 
+* From the command line `node node_modules/.bin/ban` when you have any staged files 
   to check their filenames.
 
 * From NPM script
@@ -77,17 +77,6 @@ the changed ones. Pass `-f` or `--all` option. Example Travis file
 script:
   - npm run ban -- --all
   - npm test
-```
-
-## Note about --harmony flag
-
-If the CI has troubles running `node --harmony` scripts, set the "ban" script to be the full
-node command
-
-```json
-"scripts": {
-  "ban": "node --harmony node_modules/.bin/ban"
-}
 ```
 
 ## Use as a module
