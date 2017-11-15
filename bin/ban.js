@@ -45,7 +45,11 @@ collectFiles(options)
     ])
   })
   .catch(function (err) {
-    console.error(err.message)
+    if (err.message) {
+      console.error(err.message)
+    } else {
+      console.error(err)
+    }
     process.exit(-1)
   })
   .done()
