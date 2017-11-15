@@ -105,8 +105,8 @@ To figure out what the script is doing, enable debug logging
 Author: Gleb Bahmutov &copy; 2015
 
 * [@bahmutov](https://twitter.com/bahmutov)
-* [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://glebbahmutov.com/blog/)
+* [glebbahmutov.com](https://glebbahmutov.com)
+* [blog](https://glebbahmutov.com/blog/)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
@@ -140,13 +140,13 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-[ban-sensitive-files-icon]: https://nodei.co/npm/ban-sensitive-files.png?downloads=true
+[ban-sensitive-files-icon]: https://nodei.co/npm/ban-sensitive-files.svg?downloads=true
 [ban-sensitive-files-url]: https://npmjs.org/package/ban-sensitive-files
-[ban-sensitive-files-ci-image]: https://travis-ci.org/bahmutov/ban-sensitive-files.png?branch=master
+[ban-sensitive-files-ci-image]: https://travis-ci.org/bahmutov/ban-sensitive-files.svg?branch=master
 [ban-sensitive-files-ci-url]: https://travis-ci.org/bahmutov/ban-sensitive-files
-[ban-sensitive-files-dependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files.png
+[ban-sensitive-files-dependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files.svg
 [ban-sensitive-files-dependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files
-[ban-sensitive-files-devdependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files/dev-status.png
+[ban-sensitive-files-devdependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files/dev-status.svg
 [ban-sensitive-files-devdependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
