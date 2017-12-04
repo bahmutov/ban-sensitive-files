@@ -70,7 +70,7 @@
     }
   },
   "devDependencies": {
-    "babel-eslint": "8.0.2",
+    "babel-eslint": "8.0.3",
     "git-issues": "1.3.1",
     "pre-git": "3.16.0",
     "rocha": "2.5.0",
@@ -81,7 +81,7 @@
     "bluebird": "3.5.1",
     "check-more-types": "2.24.0",
     "debug": "3.1.0",
-    "ggit": "2.4.0",
+    "ggit": "2.4.2",
     "lazy-ass": "1.6.0",
     "pluralize": "7.0.0",
     "ramda": "0.25.0",
