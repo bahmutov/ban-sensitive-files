@@ -1,6 +1,6 @@
 # ban-sensitive-files
 
-> Checks filenames to be committed against a library of filename rules 
+> Checks filenames to be committed against a library of filename rules
 > to prevent storing sensitive files in Git.
 > Checks some files for sensitive contents (for example authToken inside .npmrc file)
 
@@ -12,7 +12,7 @@
 
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-[![alternate](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm)
+[![alternate](https://img.shields.io/badge/manpm-%E2%9C%93-3399ff.svg)](https://github.com/bahmutov/manpm) [![renovate-app badge][renovate-badge]][renovate-app]
 
 Note: the source file with rules was taken from file
 [git-deny-patterns.json](https://github.com/jandre/safe-commit-hook/blob/master/git-deny-patterns.json)
@@ -41,7 +41,7 @@ Add to your project `npm install --save-dev ban-sensitive-files`
 
 ## Use
 
-* From the command line `node node_modules/.bin/ban` when you have any staged files 
+* From the command line `node node_modules/.bin/ban` when you have any staged files
   to check their filenames.
 
 * From NPM script
@@ -150,3 +150,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [ban-sensitive-files-devdependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
