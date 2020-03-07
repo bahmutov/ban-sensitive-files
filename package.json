@@ -66,6 +66,6 @@
     "lazy-ass": "1.6.0",
     "pluralize": "7.0.0",
     "ramda": "0.25.0",
-    "update-notifier": "2.3.0"
+    "update-notifier": "2.5.0"
   }
 }
