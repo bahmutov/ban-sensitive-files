@@ -59,7 +59,7 @@
     "standard": "10.0.3"
   },
   "dependencies": {
-    "bluebird": "3.5.1",
+    "bluebird": "3.7.2",
     "check-more-types": "2.24.0",
     "debug": "3.1.0",
     "ggit": "2.4.12",
