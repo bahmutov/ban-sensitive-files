@@ -64,7 +64,7 @@
     "debug": "3.1.0",
     "ggit": "2.4.12",
     "lazy-ass": "1.6.0",
-    "pluralize": "7.0.0",
+    "pluralize": "8.0.0",
     "ramda": "0.25.0",
     "update-notifier": "4.1.0"
   }
