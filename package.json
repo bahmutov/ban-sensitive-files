@@ -54,7 +54,7 @@
   "devDependencies": {
     "babel-eslint": "8.2.6",
     "git-issues": "1.3.1",
-    "rocha": "2.5.0",
+    "rocha": "2.5.10",
     "semantic-release": "17.0.4",
     "standard": "10.0.3"
   },
