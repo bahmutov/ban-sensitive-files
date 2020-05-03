@@ -19,7 +19,7 @@ function extension (filename) {
 
 const fileParts = {
   filename: path.basename,
-  extension: extension,
+  extension,
   path: I
 }
 
