@@ -142,8 +142,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 [ban-sensitive-files-icon]: https://nodei.co/npm/ban-sensitive-files.svg?downloads=true
 [ban-sensitive-files-url]: https://npmjs.org/package/ban-sensitive-files
-[ban-sensitive-files-ci-image]: https://travis-ci.org/bahmutov/ban-sensitive-files.svg?branch=master
-[ban-sensitive-files-ci-url]: https://travis-ci.org/bahmutov/ban-sensitive-files
+[ban-sensitive-files-ci-image]: https://github.com/bahmutov/ban-sensitive-files/workflows/ci/badge.svg?branch=master
+[ban-sensitive-files-ci-url]: https://github.com/bahmutov/ban-sensitive-files/actions
 [ban-sensitive-files-dependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files.svg
 [ban-sensitive-files-dependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files
 [ban-sensitive-files-devdependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files/dev-status.svg
