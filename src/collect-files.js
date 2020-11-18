@@ -16,7 +16,7 @@ function isFile (filename) {
 }
 
 function collectFilenamesInGitRepo (info) {
-  var filenames = []
+  let filenames = []
   if (info.A) {
     filenames = filenames.concat(info.A.map(getName))
   }

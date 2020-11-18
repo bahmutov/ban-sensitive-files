@@ -47,7 +47,7 @@ describe('ban', function () {
   })
 
   it('calls provided logger', function () {
-    var called = 0
+    let called = 0
     function logger () {
       called += 1
     }
@@ -56,7 +56,7 @@ describe('ban', function () {
   })
 
   it('supports multiple filename', function () {
-    var called = 0
+    let called = 0
     function logger () {
       called += 1
     }
@@ -66,7 +66,7 @@ describe('ban', function () {
   })
 
   it('passes multiple filename', function () {
-    var called = 0
+    let called = 0
     function logger () {
       called += 1
     }

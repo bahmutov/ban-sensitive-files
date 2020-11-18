@@ -45,7 +45,7 @@ function findLeakedData (files) {
 }
 
 function checkSensitiveFiles (options) {
-  var start
+  let start
   if (is.array(options)) {
     log('assuming got array of filenames to check for leaked data')
     start = Promise.resolve(options)
