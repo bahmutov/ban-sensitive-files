@@ -23,7 +23,7 @@ function singleTester (filenames, logger, tester, k) {
     if (tester(filename)) {
       const brokenRule = rules[k]
 
-      var message = 'invalid filename ' + filename
+      let message = 'invalid filename ' + filename
       if (check.unemptyString(brokenRule.caption)) {
         message += '\n - ' + brokenRule.caption
       }
@@ -34,6 +34,8 @@ function singleTester (filenames, logger, tester, k) {
 
       return true
     }
+
+    return false
   })
 }
 

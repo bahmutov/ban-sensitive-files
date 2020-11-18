@@ -3,7 +3,7 @@ const check = require('check-more-types')
 
 /* global describe, it */
 describe('rule to tester transform', function () {
-  var toTester = require('./rule-to-tester')
+  const toTester = require('./rule-to-tester')
 
   it('is a function', function () {
     la(check.fn(toTester))
