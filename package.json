@@ -16,7 +16,6 @@
     "ban": "node bin/ban.js",
     "issues": "git-issues",
     "semantic-release": "semantic-release",
-    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "lint": "standard --verbose --fix bin/*.js src/*.js"
   },
   "standard": {
