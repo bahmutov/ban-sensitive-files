@@ -7,8 +7,6 @@
 [![NPM][ban-sensitive-files-icon] ][ban-sensitive-files-url]
 
 [![Build status][ban-sensitive-files-ci-image] ][ban-sensitive-files-ci-url]
-[![dependencies][ban-sensitive-files-dependencies-image] ][ban-sensitive-files-dependencies-url]
-[![devdependencies][ban-sensitive-files-devdependencies-image] ][ban-sensitive-files-devdependencies-url]
 
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
@@ -144,10 +142,6 @@ OTHER DEALINGS IN THE SOFTWARE.
 [ban-sensitive-files-url]: https://npmjs.org/package/ban-sensitive-files
 [ban-sensitive-files-ci-image]: https://github.com/bahmutov/ban-sensitive-files/workflows/ci/badge.svg?branch=master
 [ban-sensitive-files-ci-url]: https://github.com/bahmutov/ban-sensitive-files/actions
-[ban-sensitive-files-dependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files.svg
-[ban-sensitive-files-dependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files
-[ban-sensitive-files-devdependencies-image]: https://david-dm.org/bahmutov/ban-sensitive-files/dev-status.svg
-[ban-sensitive-files-devdependencies-url]: https://david-dm.org/bahmutov/ban-sensitive-files#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
