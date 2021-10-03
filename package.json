@@ -57,7 +57,7 @@
     "husky": "7.0.2",
     "rocha": "2.5.10",
     "semantic-release": "18.0.0",
-    "standard": "16.0.3"
+    "standard": "16.0.4"
   },
   "dependencies": {
     "bluebird": "3.7.2",
