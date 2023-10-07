@@ -67,7 +67,7 @@
     "lazy-ass": "1.6.0",
     "pluralize": "8.0.0",
     "ramda": "0.29.1",
-    "update-notifier": "5.1.0"
+    "update-notifier": "6.0.2"
   },
   "types": "ban.d.ts"
 }
